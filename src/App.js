@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Modal from "./components/Modal";
 import PlayButton from "./components/PlayButton";
 import { useModal } from "./hooks/useModal";
+import CharacterCard from "./components/CharacterCard";
 
 function App() {
   const [isOpenLoginModal, openLoginModal, closeLoginModal] = useModal();
@@ -52,6 +53,12 @@ function App() {
             dui et faucibus pretium. Proin in diam dictum, sollicitudin augue
             et, convallis nunc.
           </p>
+          <div style={{display: "flex", justifyContent:"space-evenly", gap: "2rem"}}>
+        <CharacterCard>
+          <CharacterCard.CardImage src={"http://www.pngall.com/wp-content/uploads/4/Rick-And-Morty.png"} />
+        </CharacterCard>
+            <CharacterCard />
+          </div>
         </section>
       </main>
     </div>
