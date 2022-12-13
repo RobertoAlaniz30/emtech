@@ -1,0 +1,17 @@
+.playButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: 0;
+    background-color: var(--aqua);
+    cursor: pointer;
+}
+
+.playButton__icon{
+    height: 30px;
+    width: 30px;
+    color: var(--white);
+}

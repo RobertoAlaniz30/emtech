@@ -10,7 +10,7 @@ function Navbar() {
     setClicked(!clicked);
   };
   return (
-    <div className="nav__container">
+    <header className="nav__container">
       <h2>Emtech</h2>
       <div className={`links ${clicked ? "active" : ""}`}>
         <List
@@ -26,7 +26,7 @@ function Navbar() {
         <BurguerButton clicked={clicked} handleOpen={handleClick} />
       </div>
       <div className={` BgDiv initial ${clicked ? " active" : ""}`}></div>
-    </div>
+    </header>
   );
 }
 
