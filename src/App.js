@@ -28,7 +28,7 @@ function App() {
               Bienvenido a <p> Lorem Ipsum</p>
             </h1>
 
-            <p>
+            <p className="algo">
               {" "}
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse tellus purus, elementum ut dui ac, pretium semper ex.
