@@ -1,4 +1,12 @@
-.playButton{
+// .playButton__container {
+//     position: relative;
+//     background-color: black;
+//     border-radius: 50%;
+//     height: 80px;
+//     width: 80px;
+
+
+.playButton {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,12 +14,40 @@
     height: 50px;
     width: 50px;
     border: 0;
+    position: relative;
     background-color: var(--aqua);
     cursor: pointer;
+
+    &::before {
+        content: "";
+        position: absolute;
+        border: 15px solid #fff;
+        border-radius: 50%;
+        top: -20px;
+        left: -20px;
+        right: -20px;
+        bottom: -20px;
+        animation: bloom1 1.5s linear infinite;
+        opacity: 0;
+        z-index: 1;
+    }
+    @keyframes bloom1 {
+        0% {
+            transform: scale(.5);
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1.5);
+        }
+    }
 }
 
-.playButton__icon{
+.playButton__icon {
     height: 30px;
     width: 30px;
     color: var(--white);
 }
+
+// }

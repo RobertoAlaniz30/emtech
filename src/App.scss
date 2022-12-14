@@ -9,7 +9,7 @@
 
 .App {
   text-align: center;
-  
+
 }
 
 h1,
@@ -28,10 +28,11 @@ span {
     padding: 0 4rem 4rem 4rem;
     background: rgb(2, 0, 36);
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(27, 9, 121, 1) 23%, rgba(0, 212, 255, 1) 100%);
-    @media screen and (min-width: 900px) {
-     height: 100vh;
 
-  }
+    @media screen and (min-width: 900px) {
+      height: 100vh;
+
+    }
   }
 
   .banner-content__container {
@@ -41,12 +42,13 @@ span {
     align-items: center;
     gap: 2rem;
     margin-top: 3rem;
+
     @media screen and (min-width: 840px) {
       width: 55%;
       margin: 0 auto;
       margin-top: 6rem;
       gap: 4rem;
-  }
+    }
 
   }
 }
@@ -74,6 +76,11 @@ span {
   border: 0;
   border-radius: 8px;
   color: var(--white);
+  transition: .8s;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 
@@ -81,6 +88,7 @@ span {
 
 .main-characters__section {
   padding: 4rem;
+
   p {
     margin-bottom: 1rem;
     color: #0E2BA0;
@@ -147,7 +155,8 @@ span {
     transform: translateY(0);
 
   }
-  &:hover .cardContent{
+
+  &:hover .cardContent {
     // height: 200;
   }
 
@@ -186,7 +195,7 @@ span {
 
 
 
-.carrusel__section{
+.carrusel__section {
   background-color: rgb(245, 245, 245);
   display: flex;
   flex-direction: column;
@@ -194,12 +203,15 @@ span {
   justify-content: center;
   align-items: center;
   height: auto;
-  h2{
+
+  h2 {
     font-size: 2.5rem;
-    p{
+
+    p {
       color: var(--aqua);
     }
   }
+
   // padding: 2rem;
 
 }

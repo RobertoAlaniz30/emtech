@@ -1,10 +1,10 @@
 import { BsFillPlayFill } from "react-icons/bs";
-import "./styles.scss"
+import "./styles.scss";
 
-function PlayButton({onClick}) {
+function PlayButton({ onClick }) {
   return (
     <button className="playButton" onClick={onClick}>
-      <BsFillPlayFill className="playButton__icon"/>
+      <BsFillPlayFill className="playButton__icon" />
     </button>
   );
 }
