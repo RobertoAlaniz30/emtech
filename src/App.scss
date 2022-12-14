@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nunito:wght@300&family=Roboto:wght@300;500&display=swap');
 
 :root {
-  --aqua: #14E3E0;
+  --aqua: #1DBACC;
   --white: #FFFFFF;
   --navyBlue: #00125B
 }
@@ -9,6 +9,7 @@
 
 .App {
   text-align: center;
+  
 }
 
 h1,
@@ -25,7 +26,7 @@ span {
 
   .banner__section {
 
-    padding: 0 3rem 3rem 3rem;
+    padding: 0 4rem 4rem 4rem;
     background: rgb(2, 0, 36);
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(27, 9, 121, 1) 23%, rgba(0, 212, 255, 1) 100%);
   }
@@ -59,25 +60,196 @@ span {
 
 .contact-button {
   background-color: var(--aqua);
-  height: 30px;
-  width: 100px;
+  height: 35px;
+  width: 125px;
   border: 0;
-  border-radius: 12px;
+  border-radius: 8px;
   color: var(--white);
 }
 
 
 // ***********************SECCION DOS ***************************
 
-.main-characters__section{
-  padding: 1rem;
-  p{
+.main-characters__section {
+  padding: 4rem;
+  // div:first-child{
+  //   width: 80%;
+  // }
+
+  p {
     margin-bottom: 1rem;
     color: #0E2BA0;
-    &:first-child{
+
+    &:first-child {
       color: var(--navyBlue);
       font-weight: bold;
     }
   }
-  
+
+  .grid__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+
+  }
+
+}
+
+// .characterCard {
+
+
+//   width: 160px;
+//   height: 200px;
+//   border-radius: 12px;
+//   position: relative;
+//   // overflow: hidden;
+
+//   img {
+//     width: 60px;
+//     height: 60px;
+//     border-radius: 50%;
+//     object-fit: cover;
+//   }
+
+//   .cardContent {
+//     height: 30px;
+//     background-color: rgba(41, 41, 41, 0.963);
+//     opacity: 0.1;
+//     position: absolute;
+//     bottom: 0px;
+//     transition: .5s;
+
+//     ul {
+//       visibility: hidden;
+//     }
+
+//   }
+
+//   &:hover .cardContent {
+//     // height: 150px;
+//     opacity: 0.7;
+//     background: black;
+//     transform: translateY(150px);
+
+//   }
+
+//   &:hover ul {
+//     visibility: visible;
+//   }
+
+// }
+
+
+
+
+// .Container:hover .Information {
+//   height: 150px;
+//   opacity: 0.7;
+//   background: black;
+//   /* visibility: visible; */
+
+// }
+
+// .Container:hover .Information p {
+//   visibility: visible;
+// }
+
+// .Container:hover img {
+//   transform: scale(1.1) rotate(-3deg);
+
+// }
+
+
+
+
+
+
+.characterCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+
+  .face {
+    width: 150px;
+    height: 160px;
+    transition: 0.5s;
+    position: relative;
+    border-radius: 8px;
+  }
+
+  .mainInfo__container {
+    display: grid;
+    place-items: center;
+    transform: translateY(80px);
+    background-color: var(--white);
+    z-index: 1;
+    width: 100%;
+
+    div {
+      display: grid;
+      place-items: center;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background-color: var(--aqua)
+    }
+
+
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+  }
+
+  &:hover .mainInfo__container {
+    transform: translateY(0);
+
+  }
+  &:hover .cardContent{
+    // height: 200;
+  }
+
+  p {
+    color: var(--aqua);
+  }
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  // height: 0;
+  padding: 12px;
+  background-color: rgb(197, 197, 197);
+  box-sizing: border-box;
+  transform: translateY(-112px);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    color: white;
+    font-size: 14px;
+
+    li {
+      padding: 0;
+    }
+  }
+}
+
+
+
+
+
+
+
+.carrusel__section{
+  background-color: aliceblue;
 }
