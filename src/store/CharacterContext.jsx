@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 
 export const StoreContext = createContext();
 const StoreProvider = ({ children }) => {
-  const [characters, setCharacters] = useState([])
+  const [characters, setCharacters] = useState(null)
 
   const handleSetCharacters = (payload)=>{
     console.log("hola")

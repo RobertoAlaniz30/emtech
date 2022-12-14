@@ -25,10 +25,13 @@ span {
   height: auto;
 
   .banner__section {
-
     padding: 0 4rem 4rem 4rem;
     background: rgb(2, 0, 36);
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(27, 9, 121, 1) 23%, rgba(0, 212, 255, 1) 100%);
+    @media screen and (min-width: 900px) {
+     height: 100vh;
+
+  }
   }
 
   .banner-content__container {
@@ -38,6 +41,12 @@ span {
     align-items: center;
     gap: 2rem;
     margin-top: 3rem;
+    @media screen and (min-width: 840px) {
+      width: 55%;
+      margin: 0 auto;
+      margin-top: 6rem;
+      gap: 4rem;
+  }
 
   }
 }
@@ -72,10 +81,6 @@ span {
 
 .main-characters__section {
   padding: 4rem;
-  // div:first-child{
-  //   width: 80%;
-  // }
-
   p {
     margin-bottom: 1rem;
     color: #0E2BA0;
@@ -95,75 +100,6 @@ span {
   }
 
 }
-
-// .characterCard {
-
-
-//   width: 160px;
-//   height: 200px;
-//   border-radius: 12px;
-//   position: relative;
-//   // overflow: hidden;
-
-//   img {
-//     width: 60px;
-//     height: 60px;
-//     border-radius: 50%;
-//     object-fit: cover;
-//   }
-
-//   .cardContent {
-//     height: 30px;
-//     background-color: rgba(41, 41, 41, 0.963);
-//     opacity: 0.1;
-//     position: absolute;
-//     bottom: 0px;
-//     transition: .5s;
-
-//     ul {
-//       visibility: hidden;
-//     }
-
-//   }
-
-//   &:hover .cardContent {
-//     // height: 150px;
-//     opacity: 0.7;
-//     background: black;
-//     transform: translateY(150px);
-
-//   }
-
-//   &:hover ul {
-//     visibility: visible;
-//   }
-
-// }
-
-
-
-
-// .Container:hover .Information {
-//   height: 150px;
-//   opacity: 0.7;
-//   background: black;
-//   /* visibility: visible; */
-
-// }
-
-// .Container:hover .Information p {
-//   visibility: visible;
-// }
-
-// .Container:hover img {
-//   transform: scale(1.1) rotate(-3deg);
-
-// }
-
-
-
-
-
 
 .characterCard {
   display: flex;
@@ -251,5 +187,19 @@ span {
 
 
 .carrusel__section{
-  background-color: aliceblue;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  h2{
+    font-size: 2.5rem;
+    p{
+      color: var(--aqua);
+    }
+  }
+  // padding: 2rem;
+
 }

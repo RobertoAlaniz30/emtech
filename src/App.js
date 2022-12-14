@@ -4,15 +4,24 @@ import Modal from "./components/Modal";
 import PlayButton from "./components/PlayButton";
 import { useModal } from "./hooks/useModal";
 import CharacterCard from "./components/CharacterCard";
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { StoreContext } from "./store/CharacterContext";
 import List from "./components/List";
+import Carousel from "./components/Carousel";
 function App() {
   const [isOpenLoginModal, openLoginModal, closeLoginModal] = useModal();
+  const [images, setImages] = useState(null);
   const { handleSetCharacters, characters } = useContext(StoreContext);
+
   useEffect(() => {
     getRickandMortyCharacters();
   }, []);
+
+  useEffect(() => {
+    if (!characters) return;
+    const images = characters.map((character) => character.image);
+    setImages(images);
+  }, [characters]);
 
   async function getRickandMortyCharacters() {
     const response = await fetch("https://rickandmortyapi.com/api/character");
@@ -20,7 +29,7 @@ function App() {
     handleSetCharacters(data.results);
     console.log(data);
   }
-  if (characters.length === 0) return <p>Loading</p>;
+  if (!characters || !images) return <p>Loading</p>;
   return (
     <div className="App">
       <main className="main__container">
@@ -96,11 +105,12 @@ function App() {
           </div>
           <button className="contact-button">Contáctanos</button>
         </section>
-{/* ***************************TERCERA SECCION *********************** */}
+        {/* ***************************TERCERA SECCION *********************** */}
         <section className="carrusel__section">
-          <h2>Conoce nuestro carrusel de personajes</h2>
-
-
+          <h2>
+            Conoce nuestro <p>carrusel de personajes </p>
+          </h2>
+          <Carousel images={images} />
         </section>
       </main>
     </div>
