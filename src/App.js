@@ -9,6 +9,8 @@ import { StoreContext } from "./store/CharacterContext";
 import Carousel from "./components/Carousel";
 import { FaFacebook } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
+import Button from "./components/Button";
+import dots from "./assets/dot_pattern.png";
 function App() {
   const [isOpenLoginModal, openLoginModal, closeLoginModal] = useModal();
   const [images, setImages] = useState(null);
@@ -40,6 +42,7 @@ function App() {
         <Navbar />
         <section className="banner__section">
           <div className="banner-content__container">
+            <img src={dots} />
             <Modal isOpen={isOpenLoginModal} closeModal={closeLoginModal} title="Asesorados">
               <iframe
                 src="https://www.youtube.com/watch?v=DlD2sZXR8RI"
@@ -62,7 +65,7 @@ function App() {
               elementum ut dui ac, pretium semper ex. Ut porta pretium volutpat. Nulla quis dui
               scelerisque, maximus tortor eget, dapibus ex. Pellentesque vitae iaculis ante.
             </p>
-            <button className="contact-button">Contáctanos</button>
+            <Button>Contáctanos</Button>
           </div>
         </section>
         {/* ***************************SECCION NUMERO DOS ************************** */}
@@ -94,7 +97,7 @@ function App() {
             ))}
           </div>
 
-          <button className="contact-button">Contáctanos</button>
+          <Button>Contáctanos</Button>
         </section>
         {/* ***************************TERCERA SECCION *********************** */}
         <section className="carrusel__section">
@@ -108,6 +111,7 @@ function App() {
         {/* ***************************cuarta SECCION *********************** */}
 
         <footer className="footer__section">
+          <img src={dots} />
           <div className="footer__main-options-container">
             {footerOptions.map((footerOption) => {
               return (

@@ -1,0 +1,16 @@
+.button {
+  background-color: var(--aqua);
+  min-height: 35px;
+  min-width: 125px;
+  padding: 0.8rem;
+  border: 0;
+  border-radius: 8px;
+  color: var(--white);
+  font-weight: bold;
+  transition: 0.8s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

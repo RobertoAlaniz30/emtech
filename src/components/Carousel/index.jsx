@@ -2,6 +2,7 @@ import useCarousel from "../../hooks/useCarousel";
 import "./styles.scss";
 import CarouselImage from "./CarouselImg";
 import CarouselButton from "./CarouselButton";
+import Button from "../Button";
 
 export default function Carousel({ images }) {
   const { selectedImage, validateCenterItem, loaded, handleImageLoaded, next, nameCenterImage } =
@@ -23,7 +24,7 @@ export default function Carousel({ images }) {
           );
         })}
       </div>
-      <CarouselButton content={"Ver mas"} handleImage={next} />
+      <Button onClIick={next}>Ver más</Button>
       <p>{nameCenterImage}</p>
     </div>
   );

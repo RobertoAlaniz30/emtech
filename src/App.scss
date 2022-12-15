@@ -25,6 +25,7 @@ span {
   background-image: url("./assets/banner.png");
   .banner__section {
     padding: 0 4rem 4rem 4rem;
+    position: relative;
     @media screen and (min-width: 900px) {
       height: 80vh;
     }
@@ -37,6 +38,13 @@ span {
     align-items: center;
     gap: 2rem;
     margin-top: 3rem;
+    img {
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top: 90%;
+      left: 10%;
+    }
 
     @media screen and (min-width: 840px) {
       width: 55%;
@@ -59,21 +67,6 @@ span {
   font-size: 15px;
   line-height: 24px;
   font-weight: 300;
-}
-
-.contact-button {
-  background-color: var(--aqua);
-  height: 35px;
-  width: 125px;
-  border: 0;
-  border-radius: 8px;
-  color: var(--white);
-  transition: 0.8s;
-  cursor: pointer;
-
-  &:hover {
-    transform: scale(1.1);
-  }
 }
 
 // ***********************SECCION DOS ***************************
@@ -189,10 +182,12 @@ span {
 /*************** CUARTA SECCION *****************/
 
 .footer__section {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   height: auto;
+  padding: 1.5rem;
   background: rgb(2, 0, 36);
   background: linear-gradient(
     90deg,
@@ -200,7 +195,13 @@ span {
     rgba(28, 141, 242, 1) 100%,
     rgba(0, 212, 255, 1) 100%
   );
-
+  img {
+    position: absolute;
+    right: 5%;
+    top: calc(350px - 390px);
+    width: 80px;
+    height: 80px;
+  }
   p {
     margin-bottom: 2rem;
     font-size: 2rem;
