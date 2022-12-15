@@ -6,7 +6,6 @@ import { useModal } from "./hooks/useModal";
 import CharacterCard from "./components/CharacterCard";
 import { useEffect, useContext, useState } from "react";
 import { StoreContext } from "./store/CharacterContext";
-import List from "./components/List";
 import Carousel from "./components/Carousel";
 import { FaFacebook } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
@@ -21,7 +20,10 @@ function App() {
 
   useEffect(() => {
     if (!characters) return;
-    const images = characters.map((character) => character.image);
+    const images = characters.map((character) => ({
+      image: character.image,
+      name: character.name
+    }));
     setImages(images);
   }, [characters]);
 
@@ -38,11 +40,7 @@ function App() {
         <Navbar />
         <section className="banner__section">
           <div className="banner-content__container">
-            <Modal
-              isOpen={isOpenLoginModal}
-              closeModal={closeLoginModal}
-              title="Asesorados"
-            >
+            <Modal isOpen={isOpenLoginModal} closeModal={closeLoginModal} title="Asesorados">
               <iframe
                 src="https://www.youtube.com/watch?v=DlD2sZXR8RI"
                 frameBorder="0"
@@ -60,50 +58,42 @@ function App() {
 
             <p className="algo">
               {" "}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse tellus purus, elementum ut dui ac, pretium semper ex.
-              Ut porta pretium volutpat. Nulla quis dui scelerisque, maximus
-              tortor eget, dapibus ex. Pellentesque vitae iaculis ante.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tellus purus,
+              elementum ut dui ac, pretium semper ex. Ut porta pretium volutpat. Nulla quis dui
+              scelerisque, maximus tortor eget, dapibus ex. Pellentesque vitae iaculis ante.
             </p>
             <button className="contact-button">Contáctanos</button>
           </div>
         </section>
         {/* ***************************SECCION NUMERO DOS ************************** */}
         <section className="main-characters__section">
-          <div>
+          <div className="main-chracters__title">
             <p>Conoce a nuestros principales personajes</p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit
-              amet tellus tempus, pharetra sem ac, accumsan nunc. Aenean tempus
-              dui et faucibus pretium. Proin in diam dictum, sollicitudin augue
-              et, convallis nunc.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet tellus tempus,
+              pharetra sem ac, accumsan nunc. Aenean tempus dui et faucibus pretium. Proin in diam
+              dictum, sollicitudin augue et, convallis nunc.
             </p>
           </div>
 
           <div className="grid__container">
-            <List
-              items={characters.slice(0, 5)}
-              render={(item) => (
-                <CharacterCard className="characterCard">
-                  <div className="mainInfo__container face">
-                    <div>
-                      <CharacterCard.CardImage src={item.image} />
-                    </div>
-                    <CharacterCard.CardTitle>
-                      {item.name}
-                    </CharacterCard.CardTitle>
-                  </div>
-                  <CharacterCard.CardContent className="cardContent face">
-                    <ul>
-                      <li> Especie: {item.species}</li>
-                      <li> Estatus: {item.status}</li>
-                      <li>Genero: {item.gender}</li>
-                    </ul>
-                  </CharacterCard.CardContent>
-                </CharacterCard>
-              )}
-            />
+            {characters.slice(0, 5).map((item) => (
+              <CharacterCard className="characterCard">
+                <div className="mainInfo__container face">
+                  <CharacterCard.CardImage src={item.image} />
+                  <CharacterCard.CardTitle>{item.name}</CharacterCard.CardTitle>
+                </div>
+                <CharacterCard.CardContent className="cardContent face">
+                  <ul>
+                    <li> {item.species}</li>
+                    <li>{item.status}</li>
+                    <li>{item.gender}</li>
+                  </ul>
+                </CharacterCard.CardContent>
+              </CharacterCard>
+            ))}
           </div>
+
           <button className="contact-button">Contáctanos</button>
         </section>
         {/* ***************************TERCERA SECCION *********************** */}
@@ -111,7 +101,8 @@ function App() {
           <h2>
             Conoce nuestro <p>carrusel de personajes </p>
           </h2>
-          <Carousel images={images} />
+
+          <Carousel images={images}></Carousel>
         </section>
 
         {/* ***************************cuarta SECCION *********************** */}
@@ -153,7 +144,7 @@ export default App;
 const footerOptions = [
   {
     title: "Inicio",
-    options: ["¿Quiénes somos?", "¿Qué hacemos?", "¿Cómo lo hacemos?"],
+    options: ["¿Quiénes somos?", "¿Qué hacemos?", "¿Cómo lo hacemos?"]
   },
   {
     title: "Cursos",
@@ -161,16 +152,11 @@ const footerOptions = [
       "Salesforce for Success",
       "Salesforce Analyst",
       "Salesforce Administrator",
-      "Salesforce Developer",
-    ],
+      "Salesforce Developer"
+    ]
   },
   {
     title: "El programa",
-    options: [
-      "Características",
-      "Beneficios",
-      "Testimoniales",
-      "Nuestra Alianza",
-    ],
-  },
+    options: ["Características", "Beneficios", "Testimoniales", "Nuestra Alianza"]
+  }
 ];

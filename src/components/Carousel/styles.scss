@@ -1,4 +1,21 @@
 .carousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  gap: 7rem;
+  z-index: 1;
+  p {
+    color: #6b6b6b77;
+    font-size: 7rem;
+    font-weight: bold;
+    position: absolute;
+    top: 75%;
+    z-index: -1;
+  }
+  .carousel__img-container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -6,58 +23,10 @@
     gap: 1rem;
     position: relative;
     @media screen and (min-width: 560px) {
-        gap: 3rem
+      gap: 3rem;
     }
     @media screen and (min-width: 750px) {
-        gap: 5rem
+      gap: 5rem;
     }
-
-    img {
-        width: 80px;
-        height: 80px;
-        border-radius: 8px;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-        opacity: 0;
-        transition: .5s, opacity 1s;
-        object-fit: cover;
-        &:hover{
-            transform: translateY(-15px);
-        }
-        &.loaded {
-            opacity: 1;
-        }
-        @media screen and (min-width: 560px) {
-            width: 120px;
-            height: 150px;
-        }
-        @media screen and (min-width: 750px) {
-            width: 180px;
-            height: 200px;
-        }
-
-    }
-
-    .centerImage {
-        width: 100px;
-        height: 100px;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        object-fit: cover;
-        @media screen and (min-width: 560px) {
-            width: 150px;
-            height: 180px;
-        }
-        @media screen and (min-width: 750px) {
-            width: 200px;
-            height: 230px;
-        }
-    }
-}
-
-.nextButton {
-    background-color: var(--aqua);
-    height: 35px;
-    width: 125px;
-    border: 0;
-    border-radius: 8px;
-    color: var(--white);
+  }
 }

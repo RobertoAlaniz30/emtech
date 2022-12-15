@@ -1,27 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nunito:wght@300&family=Roboto:wght@300;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nunito:wght@300&family=Roboto:wght@300;500&display=swap");
 
 :root {
-  --aqua: #1DBACC;
-  --white: #FFFFFF;
-  --navyBlue: #00125B
+  --aqua: #1dbacc;
+  --white: #ffffff;
+  --navyBlue: #00125b;
+  --skyblue: rgb(233, 243, 255);
+  --cardShadow: -5px 4px 20px 5px rgb(0 0 0 / 20%);
 }
-
 
 .App {
   text-align: center;
-
 }
 
 h1,
 h2,
 p,
 span {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
 }
 
 .main__container {
-
   height: auto;
   background-image: url("./assets/banner.png");
   .banner__section {
@@ -45,11 +44,8 @@ span {
       margin-top: 5rem;
       gap: 2.5rem;
     }
-
   }
 }
-
-
 
 .banner__title {
   color: var(--white);
@@ -72,7 +68,7 @@ span {
   border: 0;
   border-radius: 8px;
   color: var(--white);
-  transition: .8s;
+  transition: 0.8s;
   cursor: pointer;
 
   &:hover {
@@ -80,126 +76,106 @@ span {
   }
 }
 
-
 // ***********************SECCION DOS ***************************
 
 .main-characters__section {
   padding: 4rem;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
+  .main-chracters__title {
+    p {
+      margin-bottom: 1rem;
+      color: #0e2ba0;
+      font-size: 1.8rem;
 
-  p {
-    margin-bottom: 1rem;
-    color: #0E2BA0;
-
-    &:first-child {
-      color: var(--navyBlue);
-      font-weight: bold;
+      &:first-child {
+        color: var(--navyBlue);
+        font-weight: bold;
+        // font-size: 1rem;
+      }
     }
   }
 
   .grid__container {
+    padding: 2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
-
+    gap: 3rem;
   }
-
 }
 
 .characterCard {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
+  height: 10rem;
+  width: 8rem;
+  border-radius: 0.5rem;
   position: relative;
+  transition-duration: 0.5s;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--cardShadow);
 
-  .face {
-    width: 150px;
-    height: 160px;
-    transition: 0.5s;
-    position: relative;
-    border-radius: 8px;
+  &:hover {
+    background-color: var(--aqua);
+  }
+
+  &:hover > .cardContent {
+    display: block;
   }
 
   .mainInfo__container {
     display: grid;
+    gap: 1.8rem;
     place-items: center;
-    transform: translateY(80px);
-    background-color: var(--white);
-    z-index: 1;
-    width: 100%;
-
-    div {
-      display: grid;
-      place-items: center;
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
-      background-color: var(--aqua)
-    }
-
-
     img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
+      border-radius: 45%;
+      width: 45%;
+      object-fit: cover;
+      overflow: hidden;
     }
-
-  }
-
-  &:hover .mainInfo__container {
-    transform: translateY(0);
-
-  }
-
-  &:hover .cardContent {
-    // height: 200;
-  }
-
-  p {
-    color: var(--aqua);
+    p {
+      color: var(--aqua);
+    }
   }
 }
 
 .cardContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 12px;
-  background-color: rgb(197, 197, 197);
-  box-sizing: border-box;
-  transform: translateY(-112px);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: none;
+  transition-duration: 0.5s;
+  background-color: var(--aqua);
+  width: 100%;
+  border-radius: 0.5rem;
+  color: var(--white);
+  text-align: center;
 
   ul {
     list-style: none;
     padding: 0;
-    text-align: left;
-    color: white;
-    font-size: 14px;
 
     li {
-      padding: 0;
+      transition-duration: 0.5s;
+      padding: 0.5rem 0;
+      cursor: pointer;
+
+      &:hover {
+        font-weight: 700;
+      }
     }
   }
 }
 
-
-
-
-
-
-
 .carrusel__section {
-  background-color: rgb(245, 245, 245);
+  background-color: var(--skyblue);
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  min-height: 600px;
   height: auto;
+  padding-top: 2rem;
 
   h2 {
     font-size: 2.5rem;
@@ -210,7 +186,6 @@ span {
   }
 }
 
-
 /*************** CUARTA SECCION *****************/
 
 .footer__section {
@@ -219,7 +194,12 @@ span {
   align-items: center;
   height: auto;
   background: rgb(2, 0, 36);
-  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(28, 141, 242, 1) 100%, rgba(0, 212, 255, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(28, 141, 242, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
 
   p {
     margin-bottom: 2rem;
@@ -246,12 +226,11 @@ span {
         padding-bottom: 1.5rem;
         font-size: 18px;
         color: var(--white);
-        transition: .3s;
+        transition: 0.3s;
         cursor: pointer;
 
         &:hover {
           transform: scale(1.2);
-
         }
       }
     }
@@ -259,7 +238,6 @@ span {
     .footer__options-list--underline {
       li:first-child {
         text-decoration: underline;
-
       }
     }
 
@@ -268,10 +246,8 @@ span {
         color: white;
         width: 40px;
         height: 40px;
-        margin-left: 2rem
+        margin-left: 2rem;
       }
-
-      ;
     }
   }
 
@@ -291,5 +267,4 @@ span {
       }
     }
   }
-
 }
