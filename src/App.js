@@ -8,6 +8,8 @@ import { useEffect, useContext, useState } from "react";
 import { StoreContext } from "./store/CharacterContext";
 import List from "./components/List";
 import Carousel from "./components/Carousel";
+import { FaFacebook } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
 function App() {
   const [isOpenLoginModal, openLoginModal, closeLoginModal] = useModal();
   const [images, setImages] = useState(null);
@@ -33,9 +35,8 @@ function App() {
   return (
     <div className="App">
       <main className="main__container">
+        <Navbar />
         <section className="banner__section">
-          <Navbar />
-
           <div className="banner-content__container">
             <Modal
               isOpen={isOpenLoginModal}
@@ -43,7 +44,7 @@ function App() {
               title="Asesorados"
             >
               <iframe
-                src="https://www.youtube.com/embed/N0cMUC9DBJY"
+                src="https://www.youtube.com/watch?v=DlD2sZXR8RI"
                 frameBorder="0"
                 allowFullScreen
                 ng-show="showvideo"
@@ -112,9 +113,64 @@ function App() {
           </h2>
           <Carousel images={images} />
         </section>
+
+        {/* ***************************cuarta SECCION *********************** */}
+
+        <footer className="footer__section">
+          <div className="footer__main-options-container">
+            {footerOptions.map((footerOption) => {
+              return (
+                <div className="footer__options-container">
+                  <p>{footerOption.title}</p>
+                  <ul className="footer__options-list">
+                    {footerOption.options.map((option) => (
+                      <li>{option}</li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+            <div className="footer__options-container">
+              <p>Contáctanos</p>
+              <ul className="footer__options-list footer__options-list--underline">
+                <li>Formulario de contacto.</li>
+                <li>Síguenos en todas nuestras redes sociales.</li>
+              </ul>
+              <div className="socialMedia__icons-container">
+                <FaFacebook />
+                <AiFillInstagram />
+              </div>
+            </div>
+          </div>
+        </footer>
       </main>
     </div>
   );
 }
 
 export default App;
+
+const footerOptions = [
+  {
+    title: "Inicio",
+    options: ["¿Quiénes somos?", "¿Qué hacemos?", "¿Cómo lo hacemos?"],
+  },
+  {
+    title: "Cursos",
+    options: [
+      "Salesforce for Success",
+      "Salesforce Analyst",
+      "Salesforce Administrator",
+      "Salesforce Developer",
+    ],
+  },
+  {
+    title: "El programa",
+    options: [
+      "Características",
+      "Beneficios",
+      "Testimoniales",
+      "Nuestra Alianza",
+    ],
+  },
+];

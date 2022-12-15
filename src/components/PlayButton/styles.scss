@@ -1,18 +1,11 @@
-// .playButton__container {
-//     position: relative;
-//     background-color: black;
-//     border-radius: 50%;
-//     height: 80px;
-//     width: 80px;
-
 
 .playButton {
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    height: 70px;
+    width: 70px;
     border: 0;
     position: relative;
     background-color: var(--aqua);
