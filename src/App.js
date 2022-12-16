@@ -82,11 +82,11 @@ function App() {
           <div className="grid__container">
             {characters.slice(0, 5).map((item) => (
               <CharacterCard className="characterCard">
-                <div className="mainInfo__container face">
+                <div className="mainInfo__container">
                   <CharacterCard.CardImage src={item.image} />
                   <CharacterCard.CardTitle>{item.name}</CharacterCard.CardTitle>
                 </div>
-                <CharacterCard.CardContent className="cardContent face">
+                <CharacterCard.CardContent className="cardContent">
                   <ul>
                     <li> {item.species}</li>
                     <li>{item.status}</li>
