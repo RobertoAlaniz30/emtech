@@ -15,11 +15,7 @@ function Navbar() {
           <RxCross1 className={`defaultCrose ${clicked ? "crose" : ""}`} onClick={handleClick} />
           <div>
             {navOptions.map((option, index) => {
-              return (
-                <a key={index} onClick={handleClick}>
-                  {option.label}
-                </a>
-              );
+              return <a key={index}>{option.label}</a>;
             })}
           </div>
         </div>

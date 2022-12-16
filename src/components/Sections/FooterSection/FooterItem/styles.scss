@@ -1,0 +1,22 @@
+.footer__options-list {
+  padding: 0;
+  text-align: left;
+  list-style: none;
+
+  li {
+    padding-bottom: 1.5rem;
+    font-size: 18px;
+    color: var(--white);
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+@media screen and (min-width: 840px) {
+  .footer__options-list > li {
+    font-size: 13px;
+  }
+}

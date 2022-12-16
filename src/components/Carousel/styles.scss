@@ -9,11 +9,15 @@
   z-index: 1;
   p {
     color: #6b6b6b77;
-    font-size: 7rem;
+    font-size: 6rem;
     font-weight: bold;
     position: absolute;
-    top: 75%;
+    top: 60%;
     z-index: -1;
+    @media screen and (min-width: 560px) {
+      font-size: 7rem;
+      top: 78%;
+    }
   }
   .carousel__img-container {
     display: flex;

@@ -1,20 +1,22 @@
-import { createContext, useContext , useState, useSyncExternalStore} from "react";
-import CardTitle from "./CardTitle";
-import CardImage from "./CardImage/CardImage";
-import CardContent from "./CardContent";
+import CharacterCard from "../Card";
+import "./styles.scss";
 
-
-const CharacterCardContext = createContext();
-
-function CharacterCard({ children , className}) {
-    const [open, setopen] = useState(true)
+const Index = ({ item }) => {
   return (
-    <CharacterCardContext.Provider value={{open}}>
-      <div className={className}>{children}</div>
-    </CharacterCardContext.Provider>
+    <CharacterCard className="characterCard">
+      <div className="characterCard__img-container">
+        <CharacterCard.CardImage src={item.image} />
+        <CharacterCard.CardTitle>{item.name}</CharacterCard.CardTitle>
+      </div>
+      <CharacterCard.CardContent className="cardContent">
+        <ul>
+          <li>{item.species}</li>
+          <li>{item.status}</li>
+          <li>{item.gender}</li>
+        </ul>
+      </CharacterCard.CardContent>
+    </CharacterCard>
   );
-}
-CharacterCard.CardTitle = CardTitle;
-CharacterCard.CardImage = CardImage;
-CharacterCard.CardContent = CardContent;
-export default CharacterCard;
+};
+
+export default Index;

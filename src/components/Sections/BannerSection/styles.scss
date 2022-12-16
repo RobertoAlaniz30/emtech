@@ -1,0 +1,35 @@
+.banner__section {
+  padding: 0 4rem 4rem 4rem;
+  position: relative;
+  img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 94%;
+    left: 10%;
+  }
+  @media screen and (min-width: 900px) {
+    height: 75vh;
+    img {
+      width: 130px;
+      height: 130px;
+      top: 90%;
+    }
+  }
+}
+
+.banner-content__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+
+  @media screen and (min-width: 840px) {
+    width: 55%;
+    margin: 0 auto;
+    margin-top: 5rem;
+    gap: 2.5rem;
+  }
+}
