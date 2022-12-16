@@ -1,46 +1,45 @@
-
 .playButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    height: 70px;
-    width: 70px;
-    border: 0;
-    position: relative;
-    background-color: var(--aqua);
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 90px;
+  width: 90px;
+  border: 0;
+  position: relative;
+  background-color: var(--aqua);
+  cursor: pointer;
 
-    &::before {
-        content: "";
-        position: absolute;
-        border: 15px solid #fff;
-        border-radius: 50%;
-        top: -20px;
-        left: -20px;
-        right: -20px;
-        bottom: -20px;
-        animation: bloom1 1.5s linear infinite;
-        opacity: 0;
-        z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    border: 15px solid #fff;
+    border-radius: 50%;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    animation: bloom1 1.5s linear infinite;
+    opacity: 0;
+    z-index: 1;
+  }
+  @keyframes bloom1 {
+    0% {
+      transform: scale(0.5);
     }
-    @keyframes bloom1 {
-        0% {
-            transform: scale(.5);
-        }
-        50% {
-            opacity: 1;
-        }
-        100% {
-            transform: scale(1.5);
-        }
+    50% {
+      opacity: 1;
     }
+    100% {
+      transform: scale(1.5);
+    }
+  }
 }
 
 .playButton__icon {
-    height: 30px;
-    width: 30px;
-    color: var(--white);
+  height: 30px;
+  width: 30px;
+  color: var(--white);
 }
 
 // }

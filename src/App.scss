@@ -27,7 +27,7 @@ span {
     padding: 0 4rem 4rem 4rem;
     position: relative;
     @media screen and (min-width: 900px) {
-      height: 80vh;
+      height: 75vh;
     }
   }
 
@@ -58,13 +58,14 @@ span {
 .banner__title {
   color: var(--white);
   font-weight: 900;
-  font-size: 2.5rem;
+  font-size: 3.2rem;
   margin: 0;
+  margin-bottom: 2rem;
 }
 
 .algo {
   color: white;
-  font-size: 15px;
+  font-size: 1.3rem;
   line-height: 24px;
   font-weight: 300;
 }
@@ -74,11 +75,14 @@ span {
 .main-characters__section {
   padding: 4rem;
   background-color: #ffffff;
+
   .main-chracters__title {
+    margin: 0 auto;
+    width: 90%;
     p {
       margin-bottom: 1rem;
       color: #0e2ba0;
-      font-size: 1.8rem;
+      font-size: 1.7rem;
 
       &:first-child {
         color: var(--navyBlue);

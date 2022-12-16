@@ -49,9 +49,6 @@ export default function useCarousel(images) {
   const handleImageLoaded = () => {
     setLoaded(true);
   };
-  useEffect(() => {
-    console.log(nameCenterImage);
-  }, [nameCenterImage]);
 
   return {
     selectedImage,

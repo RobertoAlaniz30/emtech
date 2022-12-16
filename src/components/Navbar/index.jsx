@@ -1,6 +1,7 @@
 import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
 import { navOptions } from "./navOptions";
 import UseNavbar from "../../hooks/useNavbar";
+import logo_blanco from "../../assets/logo_blanco.png";
 import "./styles.scss";
 
 function Navbar() {
@@ -9,12 +10,16 @@ function Navbar() {
   return (
     <header className={`nav__container ${sticky ? "sticky" : ""}`}>
       <nav className={`links ${clicked ? "active" : ""}`}>
-        <h2>Emtech</h2>
+        <img src={logo_blanco} />
         <div className="nav-options__container">
           <RxCross1 className={`defaultCrose ${clicked ? "crose" : ""}`} onClick={handleClick} />
           <div>
-            {navOptions.map((option) => {
-              return <a onClick={handleClick}>{option.label}</a>;
+            {navOptions.map((option, index) => {
+              return (
+                <a key={index} onClick={handleClick}>
+                  {option.label}
+                </a>
+              );
             })}
           </div>
         </div>

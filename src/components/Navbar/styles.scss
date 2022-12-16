@@ -1,6 +1,6 @@
 .nav__container {
-  padding: 0 1rem;
-  height: 3rem;
+  padding: 0 3rem;
+  height: auto;
   transition: 0.5s;
   a {
     color: white;
@@ -23,10 +23,8 @@
       }
     }
 
-    h2 {
-      color: white;
-      font-weight: 400;
-      text-align: left;
+    img {
+      width: 250px;
     }
     div {
       font-size: 1rem;
@@ -59,7 +57,12 @@
     }
   }
   &.sticky {
-    background-color: var(--white);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(28, 141, 242, 1) 100%,
+      rgba(0, 212, 255, 1) 100%
+    );
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.6);
     position: sticky;
     top: 0;

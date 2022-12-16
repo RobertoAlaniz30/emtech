@@ -9,7 +9,6 @@ const UseNavbar = () => {
   };
   const handleScroll = () => {
     setSticky(window.scrollY > 10);
-    console.log(window.scrollY);
   };
 
   useEffect(() => {

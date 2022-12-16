@@ -4,53 +4,40 @@ import Modal from "./components/Modal";
 import PlayButton from "./components/PlayButton";
 import { useModal } from "./hooks/useModal";
 import CharacterCard from "./components/CharacterCard";
-import { useEffect, useContext, useState } from "react";
-import { StoreContext } from "./store/CharacterContext";
+import { Fragment, useMemo } from "react";
 import Carousel from "./components/Carousel";
 import { FaFacebook } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import Button from "./components/Button";
 import dots from "./assets/dot_pattern.png";
+import useQuery from "./hooks/useQuery";
 function App() {
   const [isOpenLoginModal, openLoginModal, closeLoginModal] = useModal();
-  const [images, setImages] = useState(null);
-  const { handleSetCharacters, characters } = useContext(StoreContext);
+  const { data, loading } = useQuery("https://rickandmortyapi.com/api/character", "characters");
 
-  useEffect(() => {
-    getRickandMortyCharacters();
-  }, []);
-
-  useEffect(() => {
-    if (!characters) return;
-    const images = characters.map((character) => ({
+  const images = useMemo(() => {
+    if (!data.characters) return;
+    const img = data.characters.map((character) => ({
       image: character.image,
       name: character.name
     }));
-    setImages(images);
-  }, [characters]);
+    return img;
+  }, [data.characters]);
 
-  async function getRickandMortyCharacters() {
-    const response = await fetch("https://rickandmortyapi.com/api/character");
-    const data = await response.json();
-    handleSetCharacters(data.results);
-    console.log(data);
-  }
-  if (!characters || !images) return <p>Loading</p>;
+  if (loading) return <p>Loading</p>;
   return (
     <div className="App">
       <main className="main__container">
         <Navbar />
         <section className="banner__section">
           <div className="banner-content__container">
-            <img src={dots} />
             <Modal isOpen={isOpenLoginModal} closeModal={closeLoginModal} title="Asesorados">
               <iframe
                 src="https://www.youtube.com/watch?v=DlD2sZXR8RI"
-                frameBorder="0"
                 allowFullScreen
                 ng-show="showvideo"
-                // width="420"
-                // height="315"
+                width="420"
+                height="315"
                 title="myFrame"
               ></iframe>
             </Modal>
@@ -67,6 +54,7 @@ function App() {
             </p>
             <Button>Contáctanos</Button>
           </div>
+          <img src={dots} />
         </section>
         {/* ***************************SECCION NUMERO DOS ************************** */}
         <section className="main-characters__section">
@@ -80,20 +68,22 @@ function App() {
           </div>
 
           <div className="grid__container">
-            {characters.slice(0, 5).map((item) => (
-              <CharacterCard className="characterCard">
-                <div className="mainInfo__container">
-                  <CharacterCard.CardImage src={item.image} />
-                  <CharacterCard.CardTitle>{item.name}</CharacterCard.CardTitle>
-                </div>
-                <CharacterCard.CardContent className="cardContent">
-                  <ul>
-                    <li> {item.species}</li>
-                    <li>{item.status}</li>
-                    <li>{item.gender}</li>
-                  </ul>
-                </CharacterCard.CardContent>
-              </CharacterCard>
+            {data.characters.slice(0, 5).map((item, index) => (
+              <Fragment key={index}>
+                <CharacterCard className="characterCard">
+                  <div className="mainInfo__container">
+                    <CharacterCard.CardImage src={item.image} />
+                    <CharacterCard.CardTitle>{item.name}</CharacterCard.CardTitle>
+                  </div>
+                  <CharacterCard.CardContent className="cardContent">
+                    <ul>
+                      <li>{item.species}</li>
+                      <li>{item.status}</li>
+                      <li>{item.gender}</li>
+                    </ul>
+                  </CharacterCard.CardContent>
+                </CharacterCard>
+              </Fragment>
             ))}
           </div>
 
@@ -113,13 +103,13 @@ function App() {
         <footer className="footer__section">
           <img src={dots} />
           <div className="footer__main-options-container">
-            {footerOptions.map((footerOption) => {
+            {footerOptions.map((footerOption, index) => {
               return (
-                <div className="footer__options-container">
+                <div key={index} className="footer__options-container">
                   <p>{footerOption.title}</p>
                   <ul className="footer__options-list">
-                    {footerOption.options.map((option) => (
-                      <li>{option}</li>
+                    {footerOption.options.map((option, index) => (
+                      <li key={index}>{option}</li>
                     ))}
                   </ul>
                 </div>
@@ -127,10 +117,10 @@ function App() {
             })}
             <div className="footer__options-container">
               <p>Contáctanos</p>
-              <ul className="footer__options-list footer__options-list--underline">
-                <li>Formulario de contacto.</li>
-                <li>Síguenos en todas nuestras redes sociales.</li>
-              </ul>
+              <div className="footer__options-list footer__options-list--underline">
+                <p>Formulario de contacto.</p>
+                <p>Síguenos en todas nuestras redes sociales.</p>
+              </div>
               <div className="socialMedia__icons-container">
                 <FaFacebook />
                 <AiFillInstagram />

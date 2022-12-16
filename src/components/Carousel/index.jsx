@@ -3,6 +3,7 @@ import "./styles.scss";
 import CarouselImage from "./CarouselImg";
 import CarouselButton from "./CarouselButton";
 import Button from "../Button";
+import { Fragment } from "react";
 
 export default function Carousel({ images }) {
   const { selectedImage, validateCenterItem, loaded, handleImageLoaded, next, nameCenterImage } =
@@ -14,13 +15,15 @@ export default function Carousel({ images }) {
         {selectedImage.map((item, index) => {
           if (!item) return;
           return (
-            <CarouselImage
-              src={item}
-              index={index}
-              loaded={loaded}
-              validateCenterItem={validateCenterItem}
-              handleImageLoaded={handleImageLoaded}
-            />
+            <Fragment key={index}>
+              <CarouselImage
+                src={item}
+                index={index}
+                loaded={loaded}
+                validateCenterItem={validateCenterItem}
+                handleImageLoaded={handleImageLoaded}
+              />
+            </Fragment>
           );
         })}
       </div>
