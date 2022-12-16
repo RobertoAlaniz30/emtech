@@ -9,7 +9,7 @@ import "./styles.scss";
 const FooterSection = () => {
   return (
     <footer className="footer__section">
-      <img src={dots} />
+      <img src={dots} alt="dots" />
       <div className="footer__options-container">
         <div className="footer__options-subContainer">
           {footerOptions.slice(0, footerOptions.length - 1).map((footerOption, index) => {

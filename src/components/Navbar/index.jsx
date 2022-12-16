@@ -10,11 +10,15 @@ function Navbar() {
   return (
     <header className={`nav__container ${sticky ? "sticky" : ""}`}>
       <nav className={`links ${clicked ? "active" : ""}`}>
-        <img src={logo_blanco} />
+        <img src={logo_blanco} alt="logo" />
         <div className="nav-options__container">
           <div>
             {navOptions.map((option, index) => {
-              return <a key={index}>{option.label}</a>;
+              return (
+                <a key={index} href="">
+                  {option.label}
+                </a>
+              );
             })}
             <RxCross1 className={`defaultCrose ${clicked ? "crose" : ""}`} onClick={handleClick} />
           </div>

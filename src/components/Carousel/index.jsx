@@ -1,7 +1,6 @@
 import useCarousel from "../../hooks/useCarousel";
 import "./styles.scss";
 import CarouselImage from "./CarouselImg";
-import CarouselButton from "./CarouselButton";
 import Button from "../Button";
 import { Fragment } from "react";
 

@@ -1,16 +1,15 @@
 import "./styles.scss";
-const Button = ({ href, onClIick, children, type, outlined = false }) => {
-  const buttonType = outlined ? type + "Outlined" : type;
+const Button = ({ href, onClIick, children, type }) => {
   return (
     <>
       {href ? (
         <a href={href}>
-          <button className="button" onClick={onClIick}>
+          <button className="button" onClick={onClIick} type={type}>
             {children}
           </button>
         </a>
       ) : (
-        <button className="button" onClick={onClIick}>
+        <button className="button" onClick={onClIick} type={type}>
           {children}
         </button>
       )}
