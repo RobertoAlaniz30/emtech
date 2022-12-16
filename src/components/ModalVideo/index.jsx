@@ -1,16 +1,17 @@
-import React from "react";
 import Modal from "../Modal";
+import "./styles.scss";
 
 const ModalVideo = ({ isOpenModal, closeModal }) => {
   return (
     <div>
-      <Modal isOpen={isOpenModal} closeModal={closeModal} title="Asesorados">
+      <Modal isOpen={isOpenModal} closeModal={closeModal}>
         <iframe
           src="https://www.youtube.com/embed/DlD2sZXR8RI"
+          className="iframe__video"
           allowFullScreen
           ng-show="showvideo"
-          width="420"
-          height="315"
+          width="auto"
+          height="auto"
           title="myFrame"
         ></iframe>
       </Modal>

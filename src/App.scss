@@ -3,9 +3,16 @@
 :root {
   --aqua: #1dbacc;
   --white: #ffffff;
+  --ligthNavyblue: #0e2ba0;
   --navyBlue: #00125b;
   --skyblue: rgb(233, 243, 255);
   --cardShadow: -5px 4px 20px 5px rgb(0 0 0 / 20%);
+  --backgroundGradient: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(28, 141, 242, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
 
 .App {

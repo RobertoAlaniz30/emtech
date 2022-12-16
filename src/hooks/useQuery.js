@@ -39,9 +39,6 @@ const useQuery = (url, dtoKey) => {
         });
       });
 
-  // useEffect(() => {
-  //   console.log(state);
-  // }, [state]);
   useEffect(() => {
     fetchData();
   }, []);

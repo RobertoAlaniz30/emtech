@@ -1,19 +1,18 @@
 .main-characters__section {
   padding: 4rem;
-  background-color: #ffffff;
+  background-color: var(--white);
 
   .main-chracters__title {
     margin: 0 auto;
     width: 90%;
     p {
       margin-bottom: 1rem;
-      color: #0e2ba0;
+      color: var(--ligthNavyblue);
       font-size: 1.7rem;
 
       &:first-child {
         color: var(--navyBlue);
         font-weight: bold;
-        // font-size: 1rem;
       }
     }
   }

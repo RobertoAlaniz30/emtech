@@ -12,11 +12,11 @@ function Navbar() {
       <nav className={`links ${clicked ? "active" : ""}`}>
         <img src={logo_blanco} />
         <div className="nav-options__container">
-          <RxCross1 className={`defaultCrose ${clicked ? "crose" : ""}`} onClick={handleClick} />
           <div>
             {navOptions.map((option, index) => {
               return <a key={index}>{option.label}</a>;
             })}
+            <RxCross1 className={`defaultCrose ${clicked ? "crose" : ""}`} onClick={handleClick} />
           </div>
         </div>
         <RxHamburgerMenu
